@@ -1,3 +1,22 @@
 JOB ORDERING with dependency
 
 Created by Jan Padrta
+
+At first I thought about pure Ruby application but I rejected this solution because I love Rails and the idea of web interface with the possibility to insert jobs and dependencies.
+
+The solution with array of arrays came into my mind immediately after reading the task.
+I was thinking about some [['a'],['b','c'],['c']] array and method to order it according to dependencies.
+
+I created the rspec tests following the given examples (later I added some new ones as a new possibilites arose) and started developing.
+
+Initial solution was a little tough coded but the principle was correct:
+- loop through the array
+- if there is dependency then find the position of it
+- delete the element and insert it in the correct place
+
+Unfortunatelly I switched the comparison and it wasn't working. So I started to experiment with the flow and after few debug steps I realised what I built wrong.
+Then it was relatively easy and quick. I corrected the flow/condition and refactored the main method.
+Then I added valid? and circular? methods to find out the errors and it was done.
+All specs were green and web interface was showing correct results.
+
+Uploading to GitHub with RubyMine, which I use, was simple and automatic.
