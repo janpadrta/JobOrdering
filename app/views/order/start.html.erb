@@ -1,0 +1,11 @@
+<%= form_tag :result, :method => :post do %>
+<h1>Enter jobs</h1><h2>and dependencies</h2>
+<fieldset>
+  <% i = 0 %>
+  <% 6.times do %>
+      <% i += 1 %>
+    <%= render 'jobs_fields', :i => i %>
+  <% end %>
+  <%= submit_tag 'Submit' %>
+</fieldset>
+<% end %>

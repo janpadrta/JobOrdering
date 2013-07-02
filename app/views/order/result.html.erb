@@ -1,0 +1,21 @@
+<h1>Result</h1>
+
+<% if @output.is_a?(String) %>
+    <%= @output %>
+<% else %>
+<table>
+  <tr>
+    <th>Job</th>
+    <th>Dependency</th>
+  </tr>
+    <% for out in @output do %>
+        <tr>
+          <td><%= out[0] %></td>
+          <td><%= out[1] %></td>
+        </tr>
+    <% end %>
+</table>
+
+<% end %>
+
+<p><%= link_to 'Back to start', gstart_path %></p>
