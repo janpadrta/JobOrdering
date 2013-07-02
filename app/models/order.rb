@@ -1,6 +1,6 @@
 class Order
 
-  def self.order_jobs(input, round = 1)
+  def self.order_jobs(input)
     begin
       msg = Order.valid?(input)
     rescue Exception => ex
